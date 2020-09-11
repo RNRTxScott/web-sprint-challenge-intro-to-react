@@ -2,6 +2,10 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Characters from './components/Characters';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle,
+} from 'reactstrap';
 
 const App = () => {
 const [swChar, setSwChar] = useState([])
@@ -18,13 +22,31 @@ const [swChar, setSwChar] = useState([])
 
 
 
-  return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-       <Characters swChar={swChar} />
-    </div>
-  );
-}
+  // return (
+  //   <div className="App">
+  //     <h1 className="Header">Characters</h1>
+  //      <Characters swChar={swChar} />
+  //   </div>
+    return (
+          <div className="App">
+       <h1 className="Header">Characters</h1>
+      <div>
+        <Card>
+          <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+          <CardBody>
+            <CardTitle>Card title</CardTitle>
+          <Characters swChar={swChar} />
+
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          </CardBody>
+        </Card>
+      </div>
+      </div>
+    );
+  };
+  
+
 
 export default App;
 
