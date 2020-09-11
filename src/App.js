@@ -1,14 +1,15 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Characters from './components/Character';
+import Characters from './components/Characters';
 
 const App = () => {
 const [swChar, setSwChar] = useState([])
   useEffect(() => {
     Axios.get('https://swapi.dev/api/people/')
     .then(response =>{
-      setSwChar(response.data);
+      setSwChar(response.data.results);
+      console.log('Char Check', response.results);
     })
     .catch(error => {
       console.log('Broken Data', error);
@@ -20,6 +21,7 @@ const [swChar, setSwChar] = useState([])
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+       <Characters swChar={swChar} />
     </div>
   );
 }
