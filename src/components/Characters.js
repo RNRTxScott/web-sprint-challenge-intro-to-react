@@ -8,7 +8,7 @@ const Characters = props => {
     
     return(
         <div> {Characters.map((Character, index)=>(
-            <Character key={index} Character={Character}  />
+        <Character key={index} Character={Character}  />
             
         ))} </div>
     )

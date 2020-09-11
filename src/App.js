@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Characters from './components/Characters';
@@ -10,10 +10,10 @@ import {
 const App = () => {
 const [swChar, setSwChar] = useState([])
   useEffect(() => {
-    Axios.get('https://swapi.dev/api/people/')
+    axios.get('https://swapi.dev/api/people/')
     .then(response =>{
       setSwChar(response.data.results);
-      console.log('Char Check', response.results);
+      // console.log('Char Check', response.results);
     })
     .catch(error => {
       console.log('Broken Data', error);
@@ -35,7 +35,7 @@ const [swChar, setSwChar] = useState([])
           <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
           <CardBody>
             <CardTitle>Card title</CardTitle>
-          <Characters swChar={swChar} />
+            <Characters swChar={swChar} />
 
             <CardSubtitle>Card subtitle</CardSubtitle>
             <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
