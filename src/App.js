@@ -8,44 +8,30 @@ import {
 } from 'reactstrap';
 
 const App = () => {
-const [swChar, setSwChar] = useState([])
+const [characterList, setCharacterList] = useState([])
   useEffect(() => {
-    axios.get('https://swapi.dev/api/people/')
-    .then(response =>{
-      setSwChar(response.data.results);
-      // console.log('Char Check', response.results);
+    axios.get(`https://swapi.dev/api/people/`)
+    .then((response) =>{
+     
+      setCharacterList(response.data.results);
+      // console.log('Char Check', response.data.results);
     })
     .catch(error => {
       console.log('Broken Data', error);
     })
   },[])
-
-
-
-  // return (
-  //   <div className="App">
-  //     <h1 className="Header">Characters</h1>
-  //      <Characters swChar={swChar} />
-  //   </div>
     return (
           <div className="App">
-       <h1 className="Header">Characters</h1>
-      <div>
-        <Card>
-          <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <Characters swChar={swChar} />
-
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          </CardBody>
-        </Card>
-      </div>
-      </div>
+                  <h1 className="Header">Characters</h1>
+                  <Card>
+                               {characterList.map((item) => {
+                              return( 
+                              <Characters key={item.name} name={item.name} gender={item.gender} />
+                            )})} 
+                   </Card>
+          </div>
     );
   };
-  
 
 
 export default App;

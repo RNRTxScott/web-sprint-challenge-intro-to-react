@@ -1,16 +1,13 @@
 import React from 'react';
-// import Character from './Character';
+// import App from './App';
 
-const Characters = props => {
-    const { swChar } = props;
-    console.log('Pic Container', swChar);
-    const Characters=[];
-    
+ export default function Characters (props) {
+    // const { key, info } = props;
     return(
-        <div> {Characters.map((Character, index)=>(
-        <Character key={index} Character={Character}  />
-            
-        ))} </div>
-    )
-    }
-    export default Characters;
+        <div>
+            <h2> {props.name} </h2>
+            <h4> {props.gender} </h4>
+        </div>
+    )}
+
+   // export default Characters;
