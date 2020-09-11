@@ -30,11 +30,22 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React allows for the use of 'state'. this allows us to create code specific to spcific phase in the apps xistece.  This make Reacy JS more dynamic then vanilla JS.
+
 1. Describe component state.
+
+This is what schedule the update for example in setState()
 
 1. Describe props.
 
+props are a banana word used to pass down properties from parent to child elements while nesting.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side Effects are anything that can have affect on something outside of that current functions scope.  we utilize useEffect()
+
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
